@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Amazon Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      font-size: 14px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #131921;
+      color: white;
+      padding: 20px 25px;
+      flex-wrap: wrap;
+      
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 50px;
+      font-weight: bold;
+      color: #ff9900;
+    }
+
+    .logo span {
+      color: white;
+      font-size: 18px;
+    }
+
+    .location {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .search-bar {
+      display: flex;
+      flex: 1;
+      max-width: 600px;
+      margin: 10px 20px;
+      min-width: 300px;
+      
+    }
+
+    .search-bar select {
+      padding: 6px;
+      border: none;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 6px;
+      border: none;
+    }
+
+    .search-btn {
+      background-color: #febd69;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+    }
+
+    .account, .orders {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart {
+      position: relative;
+    }
+
+    .cart-count {
+      background-color: orange;
+      color: black;
+      border-radius: 50%;
+      padding: 0 6px;
+      font-weight: bold;
+      position: absolute;
+      top: -8px;
+      left: 20px;
+    }
+
+    .subnav {
+      background-color: #232f3e;
+      color: white;
+      display: flex;
+      height: max-content;
+      gap: 15px;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    .subnav a {
+      margin-left: 3px ;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+      margin-bottom: 4px;
+    }
+    .header {
+      background-color: #131921;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: orange;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 400px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .account-section {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cart {
+      position: relative;
+    }
+
+    .cart span {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background-color: #f0c14b;
+      color: black;
+      padding: 2px 5px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    .nav ul{
+      background-color: #232f3e;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      gap: 40px;
+      list-style-type: none;
+    }
+    .nav li:hover {
+      background-color: #4d6077;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 70%;
+    }
+
+    .product-card h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .bot , .bot a{
+    width: 100%;
+    height:30px;
+    text-align: center;
+    background-color: #231F3E;
+    color: white;
+    text-decoration: none;
+}
+.table{
+    height: auto;
+    background-color: #232F3E;
+    color: white;
+}
+.table td li a{
+    color: white;
+    text-decoration: none;
+}
+.t1 td li a, .t1 ul{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
+.t1{
+    background-color: black;
+}
+    
+  </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+          <div class="logo">amazon<span>.in</span></div>
+          <div class="location">
+            <span class="line1">Deliver to N. Herohito</span><br/>
+            <span class="line2">Kakching, 795103</span>
+          </div>
+        </div>
+        
+        <div class="search-bar">
+          <select>
+            <option>All</option>
+          </select>
+          <input type="text" placeholder="Search Amazon.in" />
+          <button class="search-btn">🔍</button>
+        </div>
+        
+        <div class="nav-right">
+          <div class="lang">🇮🇳 EN ▼</div>
+          <div class="account">
+            <span>Hello, herohito</span>
+            <strong>Account & Lists ▼</strong>
+          </div>
+          <div class="orders">
+            <span>Returns</span>
+            <strong>& Orders</strong>
+          </div>
+          <div class="cart">
+             Cart
+          </div>
+        </div>
+      </header>
+    </div><nav class="subnav">
+        <a href="#">☰ All </a>
+        <a href="#">Keep Shopping for</a>
+        <a href="#">Buy Again</a>
+        <a href="#">AmazonBasics</a>
+        <a href="#">MX Player</a>
+        <a href="#">Sell</a>
+        <a href="#">Amazon Pay</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Gift Ideas</a>
+        <a href="#">Books</a>
+        <a href="#">Home Improvement</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Health, Household & Personal Care</a>
+      </nav>
+    <!-- <div id="top">
+  <div class="header">
+    <div class="logo">amazon<span>.in</span></div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Amazon.in" />
+    </div>
+    <div class="account-section">
+      <div>Hello, Sign in<br><strong>Account & Lists</strong></div>
+      <div>Returns<br><strong>& Orders</strong></div>
+      <div class="cart">
+        🛒
+        <span>0</span>
+      </div>
+    </div>
+  </div> 
+
+  <div class="nav">
+  <ul>
+    <li>All</li>
+    <li>Mobiles</li>
+    <li>Best Sellers</li>
+    <li>Amazon Pay</li>
+    <li>Electronics</li>
+    <li>Fashion</li>
+    <li>Prime</li>
+    <li>Today's Deals</li>
+    <li>Home & Kitchen</li>
+    <li>Computers</li>
+    <li>New Releases</li>
+</ul>
+  </div>
+</div>-->
+
+  <div class="banner">
+    <img src="amazon banner.gif" alt="Banner" />
+  </div>
+
+  <div class="products">
+    <div class="product-card">
+      <h3>Up to 60% off | Electronics</h3>
+      <img src="electronics.webp" alt="Electronics" />
+    </div>
+    <div class="product-card">
+      <h3>Top Deals | Fashion</h3>
+      <img src="fashion.jpg" alt="Fashion" />
+    </div>
+    <div class="product-card">
+      <h3>Appliances on Offer</h3>
+      <img src="appliances.webp" alt="Appliances" />
+    </div>
+    <div class="product-card">
+      <h3>Beauty Picks</h3>
+      <img src="beauty.jpg" alt="Beauty" />
+    </div>
+  
+    <div class="product-card">
+      <h3>Starting ₹299 | Latest styles from top brands</h3>
+      <img src="under 299.jpg" alt="under 299" />
+    </div>
+    
+    <div class="product-card">
+      <h3>Minimum 50% off | Home, kitchen & more</h3>
+      <img src="kitchen.webp" alt="kitchen" />
+    </div>
+ 
+     <div class="product-card">
+       <h3>Starting ₹349 | Bestselling headphones</h3>
+       <img src="headphones.webp" alt="headphones" />
+     </div>
+
+     <div class="product-card">
+        <h3>Minimum 50% off | Sports, outdoor & more</h3>
+        <img src="sports.jpg" alt="sports">
+     </div>
+
+     <div class="product-card">
+        <h3>Up to 40% off | Deals on mobiles</h3>
+        <img src="mobiles.jpg" alt="mobiles">
+     </div>
+
+     <div class="product-card">
+        <h3>Up to 75% off | Top categories from Small</h3>
+        <img src="small.webp" alt="Small">
+     </div>
+     <div class="product-card">
+      <h3>Up to 60% off | Pet products</h3>
+      <img src="pets.png" alt="pets">
+   </div>
+   <div class="product-card">
+    <h3>Buy 2 get 10% off, freebies & more</h3>
+    <img src="free.jpg" alt="freebies">
+ </div>
+  </div>
+  <footer>
+    <div class="table">
+        <div class="bot">
+            <a href="#top"><h2>Go to top</h2></a>
+          </div>
+        <table cellpadding="50">
+            <tr>
+                <td>
+                <ul style="list-style-type: none;">
+                    <li><h3>Get to know us</h3></li>
+                    <li><a href="#">About amazon</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press release</a></li>
+                    <li><a href="#">Amazon Science</a></li>
+                </ul></td>
+                <td>
+                <ul style="list-style-type: none;">
+                    <li><h3>Connect with us</h3></li>
+                    <li><a href="#">Facebook</a> </li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    
+                </ul></td>
+                <td>
+                <ul style="list-style-type: none;">
+                    <li><h3>Make money with us</h3></li>
+                    <li><a href="#">Sell on amazon</a></li>
+                    <li><a href="#">Sell under amazon accelator</a></li>
+                    <li><a href="#">Protect and build your brand</a></li>
+                    <li><a href="#">Amazon global selling</a></li>
+                    <li><a href="#">Supply to amazon</a></li>
+                    <li><a href="#">Become an affliate</a></li>
+                    <li><a href="#">Fulfillment by amazon </a></li>
+                    <li><a href="#">Advertise your products</a></li>
+                    <li><a href="#">Amazon pay on merchant</a></li>
+                </ul></td>
+                <td>
+                <ul style="list-style-type: none;">
+                    <li><h3>Let us help you</h3></li>
+                    <li><a href="#">Your account</a></li>
+                    <li><a href="#">Returns center</a></li>
+                    <li><a href="#">Recalls and product safety alerts</a></li>
+                    <li><a href="#">100% purchase protection</a></li>
+                    <li><a href="#">Amazon app download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul></td>
+    
+            </tr>
+        </table>
+        <hr width="100%" color="grey" size="2"> <br>
+    </div>
+        <div class="t1">
+        <table  cellpadding="30" >
+            <tr>
+            <td><ul>
+                <li><a href="#"><b>AbeBooks</b><br>Books, art <br>&collectibles</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>Amazon Web Series</b><br>Scalable cloud<br>Computing services</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>Audible</b><br>Download  <br>Audio books</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>IMDB</b><br>Movies, TV<br>& Celebrities</a></li></ul>
+            </td>
+    
+        </tr>
+            <tr>
+            <td><ul>
+                <li><a href="#"><b>Shopbop</b><br>Designer <br>Fashion Brands</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>Amazon Business</b><br>Everything for <br>your business</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>Prime now</b><br>2-hour delivery <br>on Everyday items</a></li></ul>
+            </td>
+            <td><ul>
+                <li><a href="#"><b>Amazon Prime Music</b><br>100 million songs ad-<br>free <br>over 15 million podcast episodes</a></li></ul>
+            </td>
+    
+        </tr>
+        </table>
+        <hr width="100%" color="grey" size="2"> <br> 
+        
+        <div class="last" style="text-align: center; ">
+            <ul style="list-style-type: none;"><li><a href="#" style="color: white; text-decoration: none;">Conditions of Use & Sale </a>
+                &nbsp;&nbsp;Privacy Notice
+                &nbsp;&nbsp;Interest-Based Ads</li>
+            <li><a href="#" style="color: white; text-decoration: none;">© 1996-2025, Amazon.com, Inc. or its affiliates</a></li></ul>
+        </div> <br>
+    </div> 
+    
+    
+    </footer> 
+ 
+</body>
+</html>
